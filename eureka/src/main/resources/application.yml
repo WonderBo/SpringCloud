@@ -3,6 +3,8 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka/      # 注册Server地址
     register-with-eureka: false                       # 注册Server避免作为注册Client再次注册
+  server:
+    enable-self-preservation: false                   # 心跳检查client服务的上线率，对于上线率低的机器会认为实例在线（自我保护模式），开发环境可以关闭保护
 
 spring:
   application:

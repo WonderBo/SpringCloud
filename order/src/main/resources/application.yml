@@ -12,3 +12,6 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8762/eureka/
+PRODUCT:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule    # Ribbon 负载均衡策略（配置key可以从Spring官网查询，value从IRule的实现类选择）

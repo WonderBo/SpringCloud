@@ -19,7 +19,7 @@
 
         <dependency>
             <groupId>com.spring.cloud</groupId>
-            <artifactId>product-common</artifactId>
+            <artifactId>order-common</artifactId>
         </dependency>
 
         <dependency>

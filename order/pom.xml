@@ -48,8 +48,8 @@
             </dependency>
             <dependency>
                 <groupId>com.spring.cloud</groupId>
-                <artifactId>product-common</artifactId>
-                <version>${product-common.version}</version>
+                <artifactId>order-common</artifactId>
+                <version>${order-common.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

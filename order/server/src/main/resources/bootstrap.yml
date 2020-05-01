@@ -1,9 +1,18 @@
+# bootstrap.yml/properties用来在程序引导时执行，应用于更加早期配置信息的读取。bootstrap先于application加载
+# 配置加载需要明确配置依赖的前/后置顺序，其中容器启动和配置服务需要的参数需要提前配置
 spring:
   application:
     name: order
+  main:
+    allow-bean-definition-overriding: true    # 允许重复定义多个Feign客户端实例（容器启动需要的参数需要提前配置）
   cloud:
     config:
       discovery:
         enabled: true
         service-id: CONFIG  # 配置中心服务名
-      profile: dev  # 配置环境（application name和profile决定配置文件）
+      profile: dev  # 配置环境（application name和profile决定配置文件，因此application name需要提前配置）
+# 配置服务是基于eureka实现的，因此为访问统一配置服务，需要提前配置eureka相关配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8762/eureka/

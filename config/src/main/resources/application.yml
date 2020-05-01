@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/WonderBo/ConfigRepo
+          username: WonderBo
+          password: justdoit111757@&
+          basedir: D:\360Downloads\Java\Spring_Cloud\config\basedir   # 本地配置仓库路径
+    # 访问格式：/{name}-{profiles}.yml 或 /{label}/{name}-{profiles}.yml
+    # name: 服务名  profiles：环境（指定dev）  label：分支（缺省为master）
+    # 配置格式支持yml、properties、json等格式转换获取
+    # 访问{name}-{profiles}.xxx配置会获取{name}-{profiles}.xxx文件和{name}.xxx文件，并对其中的配置进行合并，因此{name}.xxx一般用作通用配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8762/eureka/

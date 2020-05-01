@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: order
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: CONFIG  # 配置中心服务名
+      profile: dev  # 配置环境（application name和profile决定配置文件）

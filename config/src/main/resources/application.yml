@@ -8,12 +8,22 @@ spring:
           uri: https://github.com/WonderBo/ConfigRepo
           username: WonderBo
           password: justdoit111757@&
-          basedir: D:\360Downloads\Java\Spring_Cloud\config\basedir   # ±¾µØÅäÖÃ²Ö¿âÂ·¾¶
-    # ·ÃÎÊ¸ñÊ½£º/{name}-{profiles}.yml »ò /{label}/{name}-{profiles}.yml
-    # name: ·şÎñÃû  profiles£º»·¾³£¨Ö¸¶¨dev£©  label£º·ÖÖ§£¨È±Ê¡Îªmaster£©
-    # ÅäÖÃ¸ñÊ½Ö§³Öyml¡¢properties¡¢jsonµÈ¸ñÊ½×ª»»»ñÈ¡
-    # ·ÃÎÊ{name}-{profiles}.xxxÅäÖÃ»á»ñÈ¡{name}-{profiles}.xxxÎÄ¼şºÍ{name}.xxxÎÄ¼ş£¬²¢¶ÔÆäÖĞµÄÅäÖÃ½øĞĞºÏ²¢£¬Òò´Ë{name}.xxxÒ»°ãÓÃ×÷Í¨ÓÃÅäÖÃ
+          basedir: D:\360Downloads\Java\Spring_Cloud\config\basedir   # æœ¬åœ°é…ç½®ä»“åº“è·¯å¾„
+    # è®¿é—®æ ¼å¼ï¼š/{name}-{profiles}.yml æˆ– /{label}/{name}-{profiles}.yml
+    # name: æœåŠ¡å  profilesï¼šç¯å¢ƒï¼ˆæŒ‡å®šdevï¼‰  labelï¼šåˆ†æ”¯ï¼ˆç¼ºçœä¸ºmasterï¼‰
+    # é…ç½®æ ¼å¼æ”¯æŒymlã€propertiesã€jsonç­‰æ ¼å¼è½¬æ¢è·å–
+    # è®¿é—®{name}-{profiles}.xxxé…ç½®ä¼šè·å–{name}-{profiles}.xxxæ–‡ä»¶å’Œ{name}.xxxæ–‡ä»¶ï¼Œå¹¶å¯¹å…¶ä¸­çš„é…ç½®è¿›è¡Œåˆå¹¶ï¼Œå› æ­¤{name}.xxxä¸€èˆ¬ç”¨ä½œé€šç”¨é…ç½®
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8762/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"    # /actuator/bus-refresh é…ç½®åˆ·æ–°POSTæ¥å£ï¼ˆendpointï¼‰éœ€è¦æš´éœ²ç»™å¤–éƒ¨è§¦å‘

@@ -11,8 +11,19 @@ spring:
         enabled: true
         service-id: CONFIG  # 配置中心服务名
       profile: dev  # 配置环境（application name和profile决定配置文件，因此application name需要提前配置）
+    # Webhooks端的匹配规则由三部分数据组成，并由“:”连接【spring.application.name:spring.cloud.config.profile:**】，需要以此配置serviceID
+    bus:
+      id: ${spring.application.name}:${spring.cloud.config.profile}:${random.value}
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
 # 配置服务是基于eureka实现的，因此为访问统一配置服务，需要提前配置eureka相关配置
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8762/eureka/
+logging:
+  level:
+    org.springframework.cloud.bus: debug

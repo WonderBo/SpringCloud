@@ -16,7 +16,7 @@ spring:
       id: ${spring.application.name}:${spring.cloud.config.profile}:${random.value}
     stream:
       bindings:
-        myMessage:
+        myMessage:    # 消息接收/发送通道的名称，对应RabbitMQ的Exchange
           group: order    # 设置Stream服务分组，避免消息重复消费
           content-type: application/json    # 设置消息序列化格式
 # 配置服务是基于eureka实现的，因此为访问统一配置服务，需要提前配置eureka相关配置

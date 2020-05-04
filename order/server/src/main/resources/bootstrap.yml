@@ -14,6 +14,11 @@ spring:
     # Webhooks端的匹配规则由三部分数据组成，并由“:”连接【spring.application.name:spring.cloud.config.profile:**】，需要以此配置serviceID
     bus:
       id: ${spring.application.name}:${spring.cloud.config.profile}:${random.value}
+    stream:
+      bindings:
+        myMessage:
+          group: order    # 设置Stream服务分组，避免消息重复消费
+          content-type: application/json    # 设置消息序列化格式
 # 配置服务是基于eureka实现的，因此为访问统一配置服务，需要提前配置eureka相关配置
 eureka:
   client:

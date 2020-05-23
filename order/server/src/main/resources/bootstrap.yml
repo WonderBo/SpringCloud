@@ -24,3 +24,8 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8762/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"    # /actuator/hystrix.stream  hystrix dashboard监控接口需要暴露给外部触发
